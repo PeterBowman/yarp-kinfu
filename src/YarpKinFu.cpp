@@ -1,12 +1,12 @@
 // -*- mode:C++; tab-width:4; c-basic-offset:4; indent-tabs-mode:nil -*-
 
-#include "YarpKinectFusion.hpp"
+#include "YarpKinFu.hpp"
 
 #include <yarp/os/LogStream.h>
 #include <yarp/os/Property.h>
 #include <yarp/os/Value.h>
 
-bool YarpKinectFusion::configure(yarp::os::ResourceFinder & rf)
+bool YarpKinFu::configure(yarp::os::ResourceFinder & rf)
 {
     yDebug() << rf.toString();
 
@@ -44,7 +44,7 @@ bool YarpKinectFusion::configure(yarp::os::ResourceFinder & rf)
     return true;
 }
 
-bool YarpKinectFusion::close()
+bool YarpKinFu::close()
 {
     pointCloudPort.interrupt();
     pointCloudPort.close();
@@ -52,7 +52,7 @@ bool YarpKinectFusion::close()
     return true;
 }
 
-bool YarpKinectFusion::updateModule()
+bool YarpKinFu::updateModule()
 {
     return true;
 }

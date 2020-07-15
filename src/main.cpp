@@ -4,7 +4,7 @@
 #include <yarp/os/Network.h>
 #include <yarp/os/ResourceFinder.h>
 
-#include "YarpKinectFusion.hpp"
+#include "YarpKinFu.hpp"
 
 int main(int argc, char * argv[])
 {
@@ -22,6 +22,6 @@ int main(int argc, char * argv[])
         return 1;
     }
 
-    YarpKinectFusion mod;
+    YarpKinFu mod;
     return mod.runModule(rf);
 }

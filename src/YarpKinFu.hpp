@@ -1,7 +1,7 @@
 // -*- mode:C++; tab-width:4; c-basic-offset:4; indent-tabs-mode:nil -*-
 
-#ifndef __YARP_KINECT_FUSION__
-#define __YARP_KINECT_FUSION__
+#ifndef __YARP_KINFU__
+#define __YARP_KINFU__
 
 #include <yarp/os/Port.h>
 #include <yarp/os/PortWriterBuffer.h>
@@ -12,17 +12,17 @@
 
 #include <yarp/sig/PointCloud.h>
 
-#define DEFAULT_LOCAL_PREFIX "/yarpKinectFusion"
+#define DEFAULT_LOCAL_PREFIX "/yarpKinFu"
 #define DEFAULT_PERIOD_MS 20
 
-class YarpKinectFusion : public yarp::os::RFModule
+class YarpKinFu : public yarp::os::RFModule
 {
 public:
-    YarpKinectFusion() : iRGBDSensor(nullptr),
-                         period(DEFAULT_PERIOD_MS * 0.001)
+    YarpKinFu() : iRGBDSensor(nullptr),
+                  period(DEFAULT_PERIOD_MS * 0.001)
     { }
 
-    ~YarpKinectFusion()
+    ~YarpKinFu()
     { close(); }
 
     virtual bool configure(yarp::os::ResourceFinder & rf) override;
@@ -44,4 +44,4 @@ private:
     double period;
 };
 
-#endif // __YARP_KINECT_FUSION__
+#endif // __YARP_KINFU__
