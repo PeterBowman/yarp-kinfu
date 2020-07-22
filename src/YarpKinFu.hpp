@@ -3,10 +3,7 @@
 #ifndef __YARP_KINFU__
 #define __YARP_KINFU__
 
-#include <yarp/os/Port.h>
-#include <yarp/os/PortWriterBuffer.h>
 #include <yarp/os/RFModule.h>
-
 #include <yarp/dev/IRGBDSensor.h>
 #include <yarp/dev/PolyDriver.h>
 
@@ -35,9 +32,6 @@ public:
     virtual bool close() override;
 
 private:
-    yarp::os::Port pointCloudPort;
-    yarp::os::PortWriterBuffer<yarp::sig::PointCloud<yarp::sig::DataXYZ>> pointCloudPortWriter;
-
     yarp::dev::PolyDriver sensorDevice;
     yarp::dev::IRGBDSensor * iRGBDSensor;
 

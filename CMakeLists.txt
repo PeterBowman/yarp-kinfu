@@ -22,7 +22,9 @@ endif()
 # Create executable target.
 add_executable(yarp-kinfu src/main.cpp
                           src/YarpKinFu.hpp
-                          src/YarpKinFu.cpp)
+                          src/YarpKinFu.cpp
+                          src/CloudVisualizer.hpp
+                          src/CloudVisualizer.cpp)
 
 # Register dependencies.
 target_link_libraries(yarp-kinfu ${YARP_LIBRARIES} ${OpenCV_LIBS} ${VTK_LIBRARIES})

@@ -35,21 +35,12 @@ bool YarpKinFu::configure(yarp::os::ResourceFinder & rf)
         return false;
     }
 
-    if (!pointCloudPort.open(local + "/pcl:o"))
-    {
-        return false;
-    }
-
-    pointCloudPortWriter.attach(pointCloudPort);
     return true;
 }
 
 bool YarpKinFu::close()
 {
-    pointCloudPort.interrupt();
-    pointCloudPort.close();
-    sensorDevice.close();
-    return true;
+    return sensorDevice.close();
 }
 
 bool YarpKinFu::updateModule()
