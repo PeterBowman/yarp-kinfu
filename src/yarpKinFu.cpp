@@ -1,0 +1,27 @@
+// -*- mode:C++; tab-width:4; c-basic-offset:4; indent-tabs-mode:nil -*-
+
+#include <yarp/os/Log.h>
+#include <yarp/os/Network.h>
+#include <yarp/os/ResourceFinder.h>
+
+#include "YarpKinFu.hpp"
+
+int main(int argc, char * argv[])
+{
+    yarp::os::ResourceFinder rf;
+    rf.setVerbose(true);
+    rf.setDefaultContext("yarpKinFu");
+    rf.setDefaultConfigFile("yarpKinFu.ini");
+    rf.configure(argc, argv);
+
+    yarp::os::Network yarp;
+
+    if (!yarp::os::Network::checkNetwork())
+    {
+        yError("YARP network not found.\n");
+        return 1;
+    }
+
+    YarpKinFu mod;
+    return mod.runModule(rf);
+}

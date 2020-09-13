@@ -1,7 +1,7 @@
 // -*- mode:C++; tab-width:4; c-basic-offset:4; indent-tabs-mode:nil -*-
 
-#ifndef __YARP_KINFU__
-#define __YARP_KINFU__
+#ifndef __YARP_KIN_FU__
+#define __YARP_KIN_FU__
 
 #include <yarp/os/Port.h>
 #include <yarp/os/PortWriterBuffer.h>
@@ -44,4 +44,4 @@ private:
     double period;
 };
 
-#endif // __YARP_KINFU__
+#endif // __YARP_KIN_FU__

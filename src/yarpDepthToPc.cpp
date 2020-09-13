@@ -4,14 +4,14 @@
 #include <yarp/os/Network.h>
 #include <yarp/os/ResourceFinder.h>
 
-#include "YarpKinFu.hpp"
+#include "YarpDepthToPc.hpp"
 
 int main(int argc, char * argv[])
 {
     yarp::os::ResourceFinder rf;
     rf.setVerbose(true);
-    rf.setDefaultContext("yarpKinectFusion");
-    rf.setDefaultConfigFile("yarpKinectFusion.ini");
+    rf.setDefaultContext("yarpDepthToPc");
+    rf.setDefaultConfigFile("yarpDepthToPc.ini");
     rf.configure(argc, argv);
 
     yarp::os::Network yarp;
@@ -22,6 +22,6 @@ int main(int argc, char * argv[])
         return 1;
     }
 
-    YarpKinFu mod;
+    YarpDepthToPc mod;
     return mod.runModule(rf);
 }
