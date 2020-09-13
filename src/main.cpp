@@ -9,7 +9,6 @@
 int main(int argc, char * argv[])
 {
     yarp::os::ResourceFinder rf;
-    rf.setVerbose(true);
     rf.setDefaultContext("yarpKinectFusion");
     rf.setDefaultConfigFile("yarpKinectFusion.ini");
     rf.configure(argc, argv);

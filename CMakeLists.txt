@@ -6,7 +6,7 @@ project(YarpKinFu LANGUAGES CXX)
 # Find hard dependencies.
 find_package(YCM 0.11 REQUIRED)
 find_package(YARP 3.3 REQUIRED COMPONENTS os dev sig)
-find_package(OpenCV 4.0 REQUIRED COMPONENTS core rgbd)
+find_package(OpenCV 4.3 REQUIRED COMPONENTS core rgbd viz)
 
 # Create variables for standard installation directories.
 include(GNUInstallDirs)
