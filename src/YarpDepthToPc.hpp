@@ -4,9 +4,13 @@
 #define __YARP_DEPTH_TO_PC__
 
 #include <yarp/os/RFModule.h>
+
 #include <yarp/dev/PolyDriver.h>
 #include <yarp/dev/IRGBDSensor.h>
+
 #include <yarp/sig/IntrinsicParams.h>
+
+#include <opencv2/viz/viz3d.hpp>
 
 #define DEFAULT_LOCAL_PREFIX "/yarpDepthToPc"
 #define DEFAULT_PERIOD_MS 20
@@ -35,6 +39,7 @@ private:
     yarp::dev::PolyDriver sensorDevice;
     yarp::dev::IRGBDSensor * iRGBDSensor;
     yarp::sig::IntrinsicParams params;
+    cv::viz::Viz3d window;
     double period;
 };
 
